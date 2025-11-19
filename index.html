@@ -3,208 +3,225 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Name — Portfolio</title>
-  <meta name="description" content="Your Name — Frontend Developer. Clean, modern portfolio." />
+  <title>Brian Samuel Matthew — Data & Analytics Enthusiast</title>
+  <meta name="description" content="Portfolio of Brian Samuel Matthew — data & analytics projects, dashboards, and EDA." />
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-white text-slate-800 antialiased">
-
-  <!-- NAV -->
-  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200">
+<body class="bg-white text-slate-800 antialiased transition-colors duration-200">
+  <header class="sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-700">
     <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-      <a href="#hero" class="text-lg font-semibold">Your Name</a>
+      <div>
+        <a href="#hero" class="text-lg font-semibold">Brian Samuel Matthew</a>
+        <div class="text-sm text-slate-500 dark:text-slate-300">Data & Analytics Enthusiast</div>
+      </div>
 
-      <nav class="hidden md:flex gap-6 text-sm">
-        <a class="nav-link" href="#hero">Home</a>
+      <nav class="hidden md:flex gap-6 text-sm items-center">
         <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#skills">Skills</a>
         <a class="nav-link" href="#projects">Projects</a>
         <a class="nav-link" href="#contact">Contact</a>
+        <a class="btn-outline" href="resume.pdf" download>Resume</a>
+        <button id="theme-toggle" aria-label="Toggle theme" class="ml-2 px-3 py-1 rounded border">🌓</button>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <button id="theme-toggle" class="rounded px-3 py-1 border text-sm">🌓</button>
-        <a href="resume.pdf" class="hidden md:inline-block btn-primary" download>Download Resume</a>
-
-        <!-- mobile menu -->
-        <button id="menu-btn" class="md:hidden px-2 py-1" aria-label="Toggle menu">☰</button>
+      <!-- mobile controls -->
+      <div class="md:hidden flex items-center gap-2">
+        <button id="theme-toggle-mobile" aria-label="Toggle theme" class="px-2 py-1 rounded border">🌓</button>
+        <button id="menu-btn" aria-label="Toggle menu" class="px-2 py-1 rounded border">☰</button>
       </div>
     </div>
 
     <!-- mobile nav -->
-    <div id="mobile-nav" class="hidden md:hidden border-t border-slate-100">
+    <div id="mobile-nav" class="hidden md:hidden border-t border-slate-100 dark:border-slate-700">
       <div class="px-6 py-3 flex flex-col gap-2">
-        <a class="nav-link" href="#hero">Home</a>
         <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#skills">Skills</a>
         <a class="nav-link" href="#projects">Projects</a>
         <a class="nav-link" href="#contact">Contact</a>
-        <a href="resume.pdf" class="btn-primary mt-2" download>Download Resume</a>
+        <a class="btn-outline mt-2" href="resume.pdf" download>Resume</a>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
   <main>
-  <section id="hero" class="min-h-screen flex items-center">
-    <div class="max-w-4xl mx-auto px-6 text-center py-20">
-      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 fade">Your Name</h1>
-      <p class="text-xl text-slate-600 mb-8 fade delay-100">Frontend Developer — building fast, accessible, and beautiful web experiences.</p>
-      <div class="flex justify-center gap-4 fade delay-200">
-        <a class="btn-primary" href="#projects">View Projects</a>
-        <a class="btn-ghost" href="#contact">Get in touch</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="py-20">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="section-title fade">About Me</h2>
-      <p class="text-slate-700 leading-relaxed fade delay-100">
-        Short intro — who you are, what you do, and what you care about. Use 2–3 short paragraphs:
-        background, focus & what you bring to projects.
-      </p>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="bg-slate-50 py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="section-title fade">Skills</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-6">
-        <div class="skill-card fade">HTML</div>
-        <div class="skill-card fade delay-100">CSS</div>
-        <div class="skill-card fade delay-200">JavaScript</div>
-        <div class="skill-card fade delay-300">React</div>
-        <div class="skill-card fade delay-400">Accessibility</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="py-20">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="section-title fade">Selected Projects</h2>
-
-      <div class="grid gap-8 mt-8 md:grid-cols-2">
-        <!-- Project cards: 5 projects -->
-        <article class="project-card fade">
-          <div class="project-meta">
-            <h3 class="project-title">Project One</h3>
-            <p class="text-sm text-slate-500">React, Tailwind, Netlify</p>
-          </div>
-          <p class="text-slate-700 mt-3">Short description — problem, your approach, impact.</p>
-          <div class="mt-4 flex gap-3">
-            <a class="link" href="#" target="_blank">Live</a>
-            <a class="link" href="#" target="_blank">Code</a>
-          </div>
-        </article>
-
-        <article class="project-card fade delay-100">
-          <div class="project-meta">
-            <h3 class="project-title">Project Two</h3>
-            <p class="text-sm text-slate-500">Vanilla JS, API</p>
-          </div>
-          <p class="text-slate-700 mt-3">Description...</p>
-          <div class="mt-4 flex gap-3">
-            <a class="link" href="#">Live</a>
-            <a class="link" href="#">Code</a>
-          </div>
-        </article>
-
-        <article class="project-card fade delay-200">
-          <div class="project-meta">
-            <h3 class="project-title">Project Three</h3>
-            <p class="text-sm text-slate-500">Data viz</p>
-          </div>
-          <p class="text-slate-700 mt-3">Description...</p>
-          <div class="mt-4 flex gap-3">
-            <a class="link" href="#">Live</a>
-            <a class="link" href="#">Code</a>
-          </div>
-        </article>
-
-        <article class="project-card fade delay-300">
-          <div class="project-meta">
-            <h3 class="project-title">Project Four</h3>
-            <p class="text-sm text-slate-500">Design system</p>
-          </div>
-          <p class="text-slate-700 mt-3">Description...</p>
-          <div class="mt-4 flex gap-3">
-            <a class="link" href="#">Live</a>
-            <a class="link" href="#">Code</a>
-          </div>
-        </article>
-
-        <article class="project-card fade delay-400 md:col-span-2">
-          <div class="project-meta">
-            <h3 class="project-title">Project Five</h3>
-            <p class="text-sm text-slate-500">Full stack</p>
-          </div>
-          <p class="text-slate-700 mt-3">Description...</p>
-          <div class="mt-4 flex gap-3">
-            <a class="link" href="#">Live</a>
-            <a class="link" href="#">Code</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="bg-slate-50 py-16">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="section-title fade">Contact</h2>
-
-      <div class="mt-6 grid md:grid-cols-2 gap-8">
-        <div class="fade">
-          <h3 class="font-semibold">Email & Social</h3>
-          <p class="text-slate-700 mt-2">Prefer email? Fill the form or reach me via:</p>
-
-          <ul class="mt-4 space-y-2">
-            <li><a class="link" href="mailto:you@example.com">you@example.com</a></li>
-            <li><a class="link" href="https://github.com/yourname" target="_blank">GitHub</a></li>
-            <li><a class="link" href="https://linkedin.com/in/yourname" target="_blank">LinkedIn</a></li>
-          </ul>
-
-          <div class="mt-6">
-            <a class="btn-primary" href="resume.pdf" download>Download Resume</a>
-          </div>
+    <!-- HERO -->
+    <section id="hero" class="min-h-screen flex items-center">
+      <div class="max-w-4xl mx-auto px-6 text-center py-20">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Brian Samuel Matthew</h1>
+        <p class="text-xl text-slate-600 dark:text-slate-300 mb-6">Data & Analytics Enthusiast — exploratory analysis, dashboards, and data storytelling.</p>
+        <div class="flex justify-center gap-4">
+          <a class="btn-primary" href="#projects">View Projects</a>
+          <a class="btn-ghost" href="#contact">Get in touch</a>
         </div>
-
-        <form id="contact-form" class="bg-white p-6 rounded-lg shadow fade" onsubmit="return handleContact(event);">
-          <label class="block mb-2">
-            <span class="text-sm">Name</span>
-            <input name="name" required class="input mt-1" />
-          </label>
-          <label class="block mb-2">
-            <span class="text-sm">Email</span>
-            <input name="email" type="email" required class="input mt-1" />
-          </label>
-          <label class="block mb-2">
-            <span class="text-sm">Message</span>
-            <textarea name="message" rows="6" required class="input mt-1"></textarea>
-          </label>
-          <div class="mt-4 flex gap-3">
-            <button class="btn-primary" type="submit">Send message</button>
-            <button class="btn-ghost" type="reset">Reset</button>
-          </div>
-          <p id="form-note" class="mt-3 text-sm text-slate-500"></p>
-        </form>
+        <p class="mt-8 text-sm text-slate-500">B.Eng (Computer Engineering), Class of 2024 — GPA 3.50</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="py-8 text-center text-sm text-slate-500">
-    © <span id="year"></span> Your Name — Built with care.
-  </footer>
+    <!-- ABOUT -->
+    <section id="about" class="py-16">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="section-title">About</h2>
+        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+          I build data-driven solutions and visualizations to surface actionable insights. My academic background in Computer Engineering (2024) and hands-on projects across EDA, dashboards, and backend data integration have prepared me to contribute to analytics teams and data-focused roles.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="bg-slate-50 dark:bg-slate-900/40 py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="section-title">Skills</h2>
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          <div class="skill-card">Python</div>
+          <div class="skill-card">Pandas</div>
+          <div class="skill-card">SQL / MariaDB</div>
+          <div class="skill-card">Looker Studio</div>
+          <div class="skill-card">Data Viz (Matplotlib / Seaborn)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="section-title">Selected Projects</h2>
+
+        <div class="grid gap-6 mt-8 md:grid-cols-2">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="project-title">Car Rental Management System (Python)</h3>
+                <p class="text-sm text-slate-500">Python CLI · file I/O</p>
+              </div>
+              <div class="text-xs text-slate-400">Project 1</div>
+            </div>
+            <p class="mt-3 text-slate-700 dark:text-slate-300 text-sm">
+              Menu-driven Python app for managing vehicle inventory, rentals, and availability. Demonstrates CRUD operations, file-based persistence, and modular program design ready to be extended with a database backend.
+            </p>
+            <div class="mt-4 flex gap-3">
+              <!-- no repo link supplied for Project 1 -->
+              <a class="link" href="#" aria-disabled="true">Live</a>
+              <a class="link" href="#" aria-disabled="true">Code</a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="project-title">Car Rental System (Python + MariaDB)</h3>
+                <p class="text-sm text-slate-500">Python · MariaDB · SQL</p>
+              </div>
+              <div class="text-xs text-slate-400">Project 2</div>
+            </div>
+            <p class="mt-3 text-slate-700 dark:text-slate-300 text-sm">
+              Database-backed rental system with customer/admin roles and full CRUD. Focused on relational schema design and SQL integration to persist car inventory and rental transactions.
+            </p>
+            <div class="mt-4 flex gap-3">
+              <a class="link" href="https://github.com/Ale1sterX/Car-Rental-Python-MariaDB" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="project-title">Transjakarta Operational Efficiency Analysis</h3>
+                <p class="text-sm text-slate-500">Python · Pandas · EDA</p>
+              </div>
+              <div class="text-xs text-slate-400">Project 3</div>
+            </div>
+            <p class="mt-3 text-slate-700 dark:text-slate-300 text-sm">
+              Exploratory analysis of Transjakarta trip data: cleaning, KPI calculations, and visualizations to identify route utilization, peak patterns, and operational bottlenecks. Notebook + cleaned dataset included.
+            </p>
+            <div class="mt-4 flex gap-3">
+              <a class="link" href="#" aria-disabled="true">Notebook</a>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="project-title">MLBB Heroes Performance Dashboard</h3>
+                <p class="text-sm text-slate-500">Looker Studio · Dashboarding</p>
+              </div>
+              <div class="text-xs text-slate-400">Project 4</div>
+            </div>
+            <p class="mt-3 text-slate-700 dark:text-slate-300 text-sm">
+              Interactive dashboard showing hero-level win/pick/ban rates with rank and date filters. Built in Looker Studio with supporting data sources and a presentation overview.
+            </p>
+            <div class="mt-4 flex gap-3">
+              <a class="link" href="https://lookerstudio.google.com/reporting/f9f4fc3a-f58f-4815-9804-d12720a57e34" target="_blank" rel="noopener">View Dashboard</a>
+              <a class="link" href="https://www.canva.com/design/DAG5IGFkXeI/S9yhWIcO8ezEa0DnPg0JPA/edit" target="_blank" rel="noopener">Presentation</a>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card md:col-span-2">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="project-title">Saudi Arabia Used Cars Market Analysis</h3>
+                <p class="text-sm text-slate-500">Python · Pandas · Visualization</p>
+              </div>
+              <div class="text-xs text-slate-400">Project 5</div>
+            </div>
+            <p class="mt-3 text-slate-700 dark:text-slate-300 text-sm">
+              Data-driven examination of pricing and feature impacts across the Saudi used car market. Includes EDA, feature correlation checks, and visualizations to surface pricing drivers and market distribution.
+            </p>
+            <div class="mt-4 flex gap-3">
+              <a class="link" href="https://github.com/Ale1sterX/Saudi-Arabia-Used-Cars-Analysis" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="bg-slate-50 dark:bg-slate-900/40 py-12">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="section-title">Contact</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-8">
+          <div>
+            <p class="text-slate-700 dark:text-slate-300">Prefer email? Reach out or use the contact form.</p>
+            <ul class="mt-4 space-y-2 text-sm">
+              <li>Email: <a class="link" href="mailto:you@example.com">you@example.com</a></li>
+              <li>GitHub: <a class="link" href="https://github.com/Ale1sterX" target="_blank" rel="noopener">github.com/Ale1sterX</a></li>
+              <li>LinkedIn: <a class="link" href="#" target="_blank" rel="noopener">linkedin.com/in/yourname</a></li>
+            </ul>
+          </div>
+
+          <form id="contact-form" class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow" onsubmit="return handleContact(event);">
+            <label class="block mb-2 text-sm">
+              <span>Name</span>
+              <input name="name" class="input mt-1" required />
+            </label>
+            <label class="block mb-2 text-sm">
+              <span>Email</span>
+              <input name="email" type="email" class="input mt-1" required />
+            </label>
+            <label class="block mb-2 text-sm">
+              <span>Message</span>
+              <textarea name="message" rows="5" class="input mt-1" required></textarea>
+            </label>
+            <div class="flex gap-3 mt-3">
+              <button class="btn-primary" type="submit">Send message</button>
+              <button class="btn-ghost" type="reset">Reset</button>
+            </div>
+            <p id="form-note" class="mt-2 text-sm text-slate-500"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-8 text-center text-sm text-slate-500">
+      © <span id="year"></span> Brian Samuel Matthew
+    </footer>
   </main>
 
   <script src="script.js"></script>
