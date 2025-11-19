@@ -1,85 +1,78 @@
-/* General */
-body.dark {
-  background-color: #111827;
-  color: #e5e7eb;
+/* base helpers (a few that complement Tailwind) */
+:root {
+  --accent: #2563eb;
+  --muted: #64748b;
 }
 
-.section {
-  max-width: 800px;
-  margin: auto;
-  padding: 80px 20px;
-}
-
+/* Typography & spacing tweaks */
 .section-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 0.75rem;
+  color: #0f172a;
 }
 
 /* Buttons */
-.primary-btn {
-  padding: 10px 20px;
-  background: #2563eb;
+.btn-primary {
+  background: var(--accent);
   color: white;
-  border-radius: 8px;
-  display: inline-block;
-  transition: 0.2s;
+  padding: 0.55rem 0.9rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.14);
+  transition: transform .14s ease, box-shadow .14s;
 }
-.primary-btn:hover {
-  background: #1d4ed8;
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(37,99,235,0.16); }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #e6eefc;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.6rem;
 }
 
-/* Skill cards */
+/* nav link */
+.nav-link {
+  color: #0f172a;
+  text-decoration: none;
+  padding: 0.25rem .3rem;
+  transition: color .15s;
+}
+.nav-link:hover { color: var(--accent); }
+
+/* skill card */
 .skill-card {
   background: white;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-body.dark .skill-card {
-  background: #1f2937;
-  color: #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align:center;
+  box-shadow: 0 6px 18px rgba(10,20,40,0.06);
+  font-weight:600;
 }
 
-/* Generic Card */
-.card {
+/* project card */
+.project-card {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-}
-body.dark .card {
-  background: #1f2937;
-  color: #e5e7eb;
+  padding: 1.25rem;
+  border-radius: 0.8rem;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 6px 16px rgba(10,20,40,0.04);
 }
 
-.card-title {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-/* Inputs */
+/* small helpers */
+.link { color: var(--accent); font-weight:600; }
 .input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-body.dark .input {
-  background: #1f2937;
-  border: 1px solid #374151;
-  color: white;
+  width: 100%;
+  padding: .6rem;
+  border-radius: .55rem;
+  border: 1px solid #e6eefc;
 }
 
-/* Fade-in animation */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1.2s forwards ease-in-out;
-}
+/* fade animation helpers (JS toggles classes for intersection) */
+.fade { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; }
+.fade.in { opacity: 1; transform: translateY(0); }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* responsive tweaks */
+@media (max-width: 640px) {
+  .project-title { font-size: 1.02rem; }
 }
