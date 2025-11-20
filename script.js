@@ -26,12 +26,12 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('site-theme', next);
 });
 
-// Simple nav active link on scroll
+// Nav active link on scroll
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = Array.from(navLinks).map(a => document.getElementById(a.getAttribute('href').substring(1)));
 
 function onScroll() {
-  const y = window.scrollY + 120; // offset for header
+  const y = window.scrollY + 120;
   let idx = sections.length - 1;
   for (let i = 0; i < sections.length; i++) {
     if (sections[i].offsetTop > y) {
@@ -39,14 +39,7 @@ function onScroll() {
       break;
     }
   }
-  navLinks.forEach((a,i) => a.classList.toggle('active', i === idx));
+  navLinks.forEach((a, i) => a.classList.toggle('active', i === idx));
 }
 window.addEventListener('scroll', onScroll);
 onScroll();
-
-// Resume button: ensure consistent look — no extra JS needed (download attribute used in HTML).
-
-// Accessibility: keyboard support for theme toggle
-themeToggle.addEventListener('keyup', (e) => {
-  if (e.key === 'Enter' || e.key === ' ') themeToggle.click();
-});

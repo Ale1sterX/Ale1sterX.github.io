@@ -214,3 +214,19 @@ a:focus,button:focus{outline:2px solid rgba(55,120,255,0.18);outline-offset:3px;
   --card: rgba(5,6,7,0.03);
   --glass: rgba(5,6,7,0.02);
 }
+/* --- existing your CSS remains unchanged until bottom --- */
+
+.center {
+  text-align: center;
+}
+
+/* Contact button style (box-like buttons) */
+.contact-btn {
+  min-width: 110px;
+  justify-content: center;
+}
+
+/* ensure contact link wrapper centers the row */
+.contact-links {
+  justify-content: center;
+}
