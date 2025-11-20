@@ -26,9 +26,11 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('site-theme', next);
 });
 
-// Nav active link on scroll
+// Nav active highlight
 const navLinks = document.querySelectorAll('.nav-link');
-const sections = Array.from(navLinks).map(a => document.getElementById(a.getAttribute('href').substring(1)));
+const sections = Array.from(navLinks).map(a =>
+  document.getElementById(a.getAttribute('href').substring(1))
+);
 
 function onScroll() {
   const y = window.scrollY + 120;
@@ -44,9 +46,3 @@ function onScroll() {
 
 window.addEventListener('scroll', onScroll);
 onScroll();
-const toggleBtn = document.getElementById("theme-toggle");
-const body = document.body;
-
-toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("light-mode");
-});
