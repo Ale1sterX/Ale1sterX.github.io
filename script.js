@@ -41,5 +41,12 @@ function onScroll() {
   }
   navLinks.forEach((a, i) => a.classList.toggle('active', i === idx));
 }
+
 window.addEventListener('scroll', onScroll);
 onScroll();
+const toggleBtn = document.getElementById("theme-toggle");
+const body = document.body;
+
+toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+});

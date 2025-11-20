@@ -247,3 +247,86 @@ a:focus,button:focus{outline:2px solid rgba(55,120,255,0.18);outline-offset:3px;
   margin-left: auto;
   margin-right: auto;
 }
+/* EXISTING STYLES REMAIN UNCHANGED */
+
+/* Profile Photo */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px; /* Rounded square */
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    margin-right: 30px;
+}
+
+/* Hero container layout */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Timeline Section */
+.timeline {
+    width: 70%;
+    margin: 40px auto;
+    border-left: 3px solid var(--accent);
+    padding-left: 25px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    left: -33px;
+    top: 5px;
+}
+
+.timeline-content h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.timeline-sub {
+    margin: 3px 0;
+    opacity: 0.8;
+}
+
+/* Contact Section Alignment */
+.center-text {
+    text-align: center;
+}
+
+.contact-desc {
+    margin-bottom: 20px;
+}
+
+/* Contact Buttons */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: var(--button-bg);
+    color: var(--text);
+    border: 1px solid var(--button-border);
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.contact-btn:hover {
+    background: var(--button-hover);
+}
