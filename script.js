@@ -1,46 +1,61 @@
-// DARK MODE TOGGLE
-const toggle = document.getElementById("theme-toggle");
+// -----------------------------
+// Theme toggle + mobile menu + fade-in
+// -----------------------------
+const themeToggle = document.getElementById('theme-toggle');
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const yearEl = document.getElementById('year');
 
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
-  toggle.textContent = "☀️";
-}
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-
-  if (document.body.classList.contains("dark")) {
-    toggle.textContent = "☀️";
-    localStorage.setItem("theme", "dark");
+// Initialize theme from localStorage, fallback to system preference
+(function initTheme() {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    document.body.classList.add('dark');
+    themeToggle.textContent = '☀️';
+  } else if (saved === 'light') {
+    document.body.classList.remove('dark');
+    themeToggle.textContent = '🌙';
   } else {
-    toggle.textContent = "🌙";
-    localStorage.setItem("theme", "light");
+    // no saved preference — use system
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      document.body.classList.add('dark');
+      themeToggle.textContent = '☀️';
+    } else {
+      themeToggle.textContent = '🌙';
+    }
+  }
+})();
+
+// Toggle theme on click
+themeToggle.addEventListener('click', () => {
+  const isDark = document.body.classList.toggle('dark');
+  themeToggle.textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+// Mobile menu toggle
+hamburger.addEventListener('click', () => {
+  if (mobileMenu.style.display === 'flex') {
+    mobileMenu.style.display = 'none';
+    mobileMenu.setAttribute('aria-hidden', 'true');
+  } else {
+    mobileMenu.style.display = 'flex';
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    mobileMenu.style.flexDirection = 'column';
   }
 });
 
+// Intersection fade-in for elements with .fade
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
 
-// MOBILE MENU
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobile-menu");
-
-hamburger.addEventListener("click", () => {
-  mobileMenu.style.display =
-    mobileMenu.style.display === "flex" ? "none" : "flex";
-});
-
-// Fade-in animations
-const fades = document.querySelectorAll(".fade");
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
-
-fades.forEach((el) => observer.observe(el));
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
