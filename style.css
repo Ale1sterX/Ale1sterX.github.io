@@ -230,3 +230,20 @@ a:focus,button:focus{outline:2px solid rgba(55,120,255,0.18);outline-offset:3px;
 .contact-links {
   justify-content: center;
 }
+/* Fix: secondary buttons too dark in light mode */
+.light-theme .btn.secondary {
+  background-color: #e4e6eb;   /* lighter, visible */
+  color: #111;
+}
+
+/* Keep hover visible in light mode */
+.light-theme .btn.secondary:hover {
+  background-color: #d5d7db;
+}
+
+/* Fix: contact description not centered */
+.contact .lead {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+}
