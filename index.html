@@ -1,150 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brian Samuel Matthew — Data & Analytics Enthusiast</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
-<header class="site-header">
-    <div class="nav-inner">
-        <div class="brand">
-            <span class="brand-name">Brian Samuel Matthew</span>
-            <span class="brand-sub">• Data & Analytics Enthusiast</span>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="name-title">Brian Samuel Matthew</span>
+            <span class="subtitle">• Data & Analytics Enthusiast</span>
         </div>
 
-        <nav class="site-nav">
-            <a class="nav-link" href="#about">About</a>
-            <a class="nav-link" href="#skills">Skills</a>
-            <a class="nav-link" href="#projects">Projects</a>
-            <a class="nav-link" href="#timeline">Education & Experience</a>
-            <a class="nav-link" href="#contact">Contact</a>
-            <a class="btn ghost" href="#" target="_blank">Resume</a>
+        <div class="nav-right">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education & Experience</a>
+            <a href="#contact">Contact</a>
+            <a href="Brian_Samuel_Matthew_Resume.pdf" class="resume-btn" download>Resume</a>
+            <button id="theme-toggle">🌙</button>
+        </div>
+    </nav>
 
-            <button id="themeToggle" class="btn secondary">🌙</button>
-        </nav>
-    </div>
-</header>
-
-<!-- HERO SECTION -->
-<section class="hero">
-    <div class="hero-container">
+    <!-- Hero Section -->
+    <header class="hero">
         <img src="me.jpg" alt="Profile Photo" class="profile-photo">
 
-        <div class="hero-text">
-            <h1 class="hero-title">Brian Samuel Matthew</h1>
-            <p class="hero-sub">
-                Data & Analytics Enthusiast — exploratory analysis, dashboards, and data storytelling.
-            </p>
+        <h1>Brian Samuel Matthew</h1>
 
-            <div class="hero-actions">
-                <a href="#projects" class="btn primary">View Projects</a>
-                <a href="#contact" class="btn outline">Get in touch</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section about">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p class="lead">
-            I'm a data & analytics enthusiast with an engineering background and a passion for uncovering insights
-            through exploratory analysis, dashboards, and data visualization. I enjoy building practical solutions
-            and turning raw data into clear narratives.
+        <p class="tagline">
+            Data & Analytics Enthusiast — exploratory analysis, dashboards, and data storytelling.
         </p>
-    </div>
-</section>
 
-<!-- SKILLS -->
-<section id="skills" class="section skills">
-    <div class="container">
+        <div class="hero-buttons">
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a href="#contact" class="btn-secondary">Get in touch</a>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+
+        <p class="about-text">
+            I'm a data & analytics enthusiast with an engineering background and a passion for uncovering
+            insights through exploratory analysis, dashboards, and data visualization. I enjoy building
+            practical solutions and turning raw data into clear narratives.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
         <h2 class="section-title">Skills</h2>
 
         <div class="skills-grid">
-            <div class="skill-card">Python</div>
-            <div class="skill-card">Pandas</div>
-            <div class="skill-card">SQL / MariaDB</div>
-            <div class="skill-card">Looker Studio</div>
-            <div class="skill-card">Data Viz (Matplotlib / Seaborn)</div>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">Pandas</span>
+            <span class="skill-pill">SQL / MariaDB</span>
+            <span class="skill-pill">Looker Studio</span>
+            <span class="skill-pill">Data Viz (Matplotlib / Seaborn)</span>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section projects">
-    <div class="container">
+    <!-- Projects -->
+    <section id="projects" class="section">
         <h2 class="section-title">Projects</h2>
 
         <div class="projects-grid">
-            <!-- Your existing cards preserved exactly -->
-            <!-- (Not repeated here to save space — but your original content remains unchanged) -->
-        </div>
-    </div>
-</section>
 
-<!-- EDUCATION + EXPERIENCE TIMELINE -->
-<section id="timeline" class="section">
-    <div class="container">
+            <!-- CARD 1 -->
+            <div class="project-card">
+                <h3>Car Rental Management System (Python)</h3>
+                <p>
+                    A CLI-based rental system emphasizing structured data handling, validation,
+                    and rental workflow automation (data-driven backend logic).
+                </p>
+                <div class="card-buttons">
+                    <a href="https://github.com/ale1sterx/car-rental-management" target="_blank" class="btn-dark">
+                        GitHub Repo
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="project-card">
+                <h3>Car Rental System w/ MariaDB</h3>
+                <p>
+                    Python + MariaDB system for managing customers, vehicles, and rental
+                    transactions with a relational schema — focused on data integrity
+                    and ETL-ready flows.
+                </p>
+                <div class="card-buttons">
+                    <a href="https://github.com/ale1sterx/mariadb-rental-system" target="_blank" class="btn-dark">
+                        GitHub Repo
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="project-card">
+                <h3>TransJakarta Operational Efficiency Analysis</h3>
+                <p>
+                    Route, fleet, and passenger-flow analysis using Python & visualization
+                    to identify bottlenecks and recommend operational improvements.
+                </p>
+                <div class="card-buttons">
+                    <a href="#" class="btn-dark">GitHub Repo</a>
+                    <a href="#" class="btn-dark">Report</a>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="project-card">
+                <h3>MLBB Hero Dashboard (Looker Studio)</h3>
+                <p>
+                    Interactive dashboard summarizing hero performance, pick/ban rate,
+                    and role distribution to surface gameplay insights and trends.
+                </p>
+                <div class="card-buttons">
+                    <a href="#" class="btn-dark">Dashboard</a>
+                    <a href="#" class="btn-dark">Report</a>
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="project-card">
+                <h3>Saudi Arabia Used Car Market Analysis</h3>
+                <p>
+                    Exploratory pricing analysis & visualization using Python —
+                    identifying pricing drivers and market patterns in the Saudi used-car market.
+                </p>
+                <div class="card-buttons">
+                    <a href="#" class="btn-dark">GitHub Repo</a>
+                    <a href="#" class="btn-dark">Presentation</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education & Experience -->
+    <section id="education" class="section">
         <h2 class="section-title">Education & Experience</h2>
 
         <div class="timeline">
 
-            <!-- Sagara -->
             <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>Back End Engineer Specialist — Sagara Technology</h3>
-                    <p class="timeline-sub">Internship • Aug 2022 – Nov 2022 (4 months)</p>
-                </div>
+                <h3>Purwadhika Digital Technology School</h3>
+                <p>Data Science & Machine Learning</p>
+                <span class="timeline-date">Aug 2025 — Present</span>
             </div>
 
-            <!-- Universitas Indonesia -->
             <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>Bachelor of Engineering — Universitas Indonesia</h3>
-                    <p class="timeline-sub">Computer Engineering • 2019 – 2024 • GPA 3.50</p>
-                </div>
+                <h3>University of Indonesia</h3>
+                <p>Bachelor's Degree — Computer Engineering<br>GPA: 3.50</p>
+                <span class="timeline-date">2019 — 2024</span>
             </div>
 
-            <!-- Purwadhika -->
             <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>Purwadhika Digital Technology School</h3>
-                    <p class="timeline-sub">Data Science & Machine Learning • Aug 2025 – Present</p>
-                </div>
+                <h3>Sagara Technology</h3>
+                <p>Back End Engineer Specialist — Internship</p>
+                <span class="timeline-date">Aug 2022 — Nov 2022</span>
             </div>
 
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section contact">
-    <div class="container center-text">
+    <!-- Contact -->
+    <section id="contact" class="section">
         <h2 class="section-title">Contact</h2>
 
-        <p class="lead contact-desc">
+        <p class="contact-text">
             Want to connect? You can reach me via email or LinkedIn.
         </p>
 
         <div class="contact-buttons">
-            <a href="mailto:your@email.com" class="contact-btn">Email</a>
-            <a href="https://linkedin.com" target="_blank" class="contact-btn">LinkedIn</a>
-            <a href="https://github.com/ale1stexr" target="_blank" class="contact-btn">GitHub</a>
+            <a href="mailto:sam7elmatthew@gmail.com" class="btn-outline">Email</a>
+            <a href="https://www.linkedin.com/in/brian-samuel-matthew" target="_blank" class="btn-outline">LinkedIn</a>
+            <a href="https://github.com/ale1sterx" target="_blank" class="btn-outline">GitHub</a>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer class="site-footer">
-    <small>© 2025 Brian Samuel Matthew</small>
-</footer>
+    <footer>
+        © 2025 Brian Samuel Matthew
+    </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
